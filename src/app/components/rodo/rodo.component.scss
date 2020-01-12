@@ -1,0 +1,41 @@
+.rodo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 16;
+  background: #112E3B;
+  color: #fff;
+  font-size: 12px;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    font-size: 16px;
+  }
+
+  &__container {
+    display: grid;
+    justify-items: center;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  &__text {
+    grid-area: 1 / 1 / 2 / 3;
+    text-align: center;
+  }
+
+  &__button {
+    margin: 0 15px;
+    background: #18BA60;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    grid-area: 2 / 1 / 3 / 3;
+    width: 100px;
+  }
+
+  &__checkbox {
+    color: #fff;
+    grid-area: 3 / 1 / 4 / 3;
+  }
+}

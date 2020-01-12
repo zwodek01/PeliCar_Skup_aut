@@ -1,0 +1,78 @@
+<app-top-bar></app-top-bar>
+<section class="contact">
+  <div class="contact__container">
+
+    <form class="text-center" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <p class="h4 mb-4 wow fadeInUp" data-wow-delay="0.5s">Wypełnij formularz wyceny auta lub zadzwoń !</p>
+
+      <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" maxlength=" 100"
+        placeholder="Imię i nazwisko (wymagane)">
+
+      <input type="tel" formControlName="contactFormPhone" id="defaultContactFormPhone" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" maxlength="12" placeholder="Telefon (wymagane)">
+
+      <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" maxlength="100" placeholder="Email (wymagane)">
+
+      <input type="text" formControlName="contactFormModel" id="defaultContactFormModel" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" maxlength="50"
+        placeholder="Model pojazdu (wymagane)">
+
+      <input type="number" formControlName="contactFormPrzebieg" id="defaultContactFormPrzebieg" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" placeholder="Przebieg (km) (wymagane)">
+
+      <input type="number" formControlName="contactFormRocznik" id="defaultContactFormRocznik" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" placeholder="Rocznik (rok) (wymagane)">
+
+      <input type="number" formControlName="contactFormPrice" id="defaultContactFormPrice" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" placeholder="Oczekiwana cena (zł) (wymagane)">
+
+      <input type="text" formControlName="contactFormLokalizacja" id="defaultContactFormLokalizacja" mdbInput
+        class="form-control mb-4 wow fadeIn" data-wow-delay="0.6s" maxlength="100" placeholder="Lokalizacja (wymagane)">
+
+      <div class="form-group">
+        <textarea formControlName="contactFormMessage" class="form-control text-area rounded-0 wow fadeIn"
+          data-wow-delay="0.6s" mdbInput id="exampleFormControlMessage" maxlength="1024" rows="3"
+          placeholder="Inne informacje (wymagane)"></textarea>
+      </div>
+
+      <input formControlName="contactFormImage" accept="image/*" multiple style="display: none" type="file"
+        (change)="handleFiles($event)" #fileInput>
+
+      <div color="default" mdbBtn block="true" class="z-depth-0 waves-effect wow fadeIn" data-wow-delay="0.6s"
+        mdbWavesEffect (click)="fileInput.click()">
+        Dodaj zdjęcia</div>
+
+      <p class="contact__text wow fadeIn" data-wow-delay="1.6s">(Możesz wybrać więcej niż jedno zdjęcie)</p>
+      <div class="contact__choosen wow fadeIn" *ngIf="notEmpty">Wybrano:
+        <div class="contact__wrapper">
+          <p class="contact__choosen-image wow fadeIn" data-wow-delay="0.3s" *ngFor="let item of file"> {{item.name}},
+          </p>
+        </div>
+      </div>
+      <div class="recaptcha wow fadeIn" data-wow-delay="0.6s">
+        <form [formGroup]="reactiveForm">
+          <re-captcha formControlName="recaptchaReactive"></re-captcha>
+        </form>
+      </div>
+      <button mdbBtn block="true" class="z-depth-0 waves-effect contact__btn" mdbWavesEffect type="submit"
+        [disabled]="disabledSubmitButton || reactiveForm.invalid">
+        <span *ngIf="disabledSubmitButton || reactiveForm.invalid">Wypełnij wszystkie pola</span>
+        <span *ngIf="disabledSubmitButton === false && reactiveForm.invalid === false">Wyślij</span>
+      </button>
+      <div *ngIf="active" class="spinner">
+        <h3 class="spinner-title">Wysyłanie wiadomości</h3>
+        <div class="sk-chase">
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<app-footer></app-footer>

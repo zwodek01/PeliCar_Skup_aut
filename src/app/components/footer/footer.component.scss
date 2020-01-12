@@ -1,0 +1,26 @@
+.footer {
+  background-color: #112E3B;
+  color: #fff;
+  padding: 5px 20px;
+  text-align: center;
+
+  &__text {
+    margin: 0;
+    font-weight: bold;
+
+    &--name {
+      font-size: 10px;
+      color: #fff;
+      font-weight: normal;
+    }
+  }
+
+  &__number {
+    font-weight: bold;
+  }
+
+  &__line {
+    background-color: #18BA60;
+    margin: 0;
+  }
+}

@@ -1,0 +1,61 @@
+.contact {
+  background-color: #112E3B;
+  color: #fff;
+
+  &__container {
+    padding: 30px 20px;
+
+
+    @media (min-width: 992px) {
+      display: grid;
+      justify-content: center;
+    }
+  }
+
+  &__btn {
+    background-color: #18BA60;
+  }
+
+  &__choosen-image {
+    margin: 5px 0;
+  }
+
+  &__text {
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+.text-center {
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 800px;
+    gap: 30px;
+    justify-items: center;
+  }
+}
+
+.h4 {
+  font-size: 32px;
+  font-weight: bold;
+
+  @media (min-width:992px) {
+    font-size: 64px;
+  }
+}
+
+.form-group {
+  width: 100%;
+}
+
+.recaptcha {
+  justify-content: center;
+  display: flex;
+  margin: 20px 0;
+}

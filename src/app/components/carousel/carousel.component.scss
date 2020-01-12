@@ -1,0 +1,36 @@
+.d-block {
+  height: calc(100vh - 106px);
+  object-fit: cover;
+}
+
+.carousel-caption {
+  bottom: 50%;
+  transform: translateY(50%);
+  font-size: 32px;
+  font-weight: bold;
+
+
+  @media (min-width: 992px) {
+    font-size: 48px;
+  }
+}
+
+.image-phone {
+  width: 45px;
+}
+
+.container-flexbox {
+  @media (max-width: 850px) and(max-height: 450px) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.h3-responsive {
+  font-size: 32px;
+  font-weight: bold;
+
+  @media (min-width: 992px) {
+    font-size: 64px;
+  }
+}

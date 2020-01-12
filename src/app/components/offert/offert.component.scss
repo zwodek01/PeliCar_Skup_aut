@@ -1,0 +1,49 @@
+.offert {
+  background: url('../../../assets/background-5.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: calc(100vh - 189px);
+  display: grid;
+
+  &__container {
+    padding: 0 20px;
+    display: grid;
+    text-align: center;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 30px;
+
+    @media (min-width: 992px) {
+      font-size: 64px;
+    }
+  }
+
+  &__text {
+    @media (min-width: 992px) {
+      font-size: 24px;
+    }
+  }
+
+  &__form {
+    justify-self: center;
+    margin-bottom: 30px;
+  }
+
+  &__text-form {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  &__button-form {
+    background-color: #18BA60;
+    width: 250px;
+    justify-self: center;
+  }
+
+}
