@@ -1,5 +1,23 @@
 # CarWebiste
 
+Static website created in Angular.
+Business card.
+
+## Technologies
+- Angular 8
+
+## Database
+- Firebase
+
+## Style
+- Scss && mdBoostrap
+
+## Live Demo
+
+https://pelicarskupaut.pl
+
+[![Example View](https://i.imgur.com/VgcAyBX.png)]
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
 
 ## Development server
